@@ -6,10 +6,8 @@ function component() {
    const element = document.createElement('div');
 
   // Lodash, now imported by this script
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-   element.classList.add('hello');
 
-const cloudyBackground = new Image();
+   const cloudyBackground = new Image();
    cloudyBackground.src = Cloudy;
 
    element.appendChild(cloudyBackground);
@@ -32,7 +30,7 @@ function handleSubmit(e) {
 
 async function getWeatherData(location) {
    const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=1986480656ec490d950204923202611&q=${location}`,
+      `http://api.weatherapi.com/v1/forecast.json?key=1849d12bc77e460a9d4131124232103&q=${location}`,
       {
          mode: 'cors',
       }

@@ -53,7 +53,7 @@ form {
 }
 
 .fa-search {
-  color: #f3f3f3;
+  color: black;
   font-size: 1.8rem;
 }
 
@@ -64,13 +64,13 @@ input[type='text'] {
   outline: none;
   background: rgba(255, 255, 255, 0.2);
   padding: 0 0 0.3rem 4.5rem;
-  color: #ffffff;
+  color: black;
   font-size: 1.6rem;
   border-radius: 0.5rem;
 }
 
 input[type='text']::placeholder {
-  color: #f3f3f3;
+  color: black;
 }
 
 .error-msg {
@@ -87,7 +87,7 @@ input[type='text']::placeholder {
   top: 30%;
   width: 90%;
   margin-left: 10%;
-  color: #f3f3f3;
+  color: black;
 }
 
 .condition {
@@ -112,6 +112,7 @@ input[type='text']::placeholder {
 }
 
 .degrees::after {
+  content: '\00B0 C';
   font-size: 3rem;
   position: absolute;
   top: 1.8rem;
