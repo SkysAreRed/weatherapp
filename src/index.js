@@ -32,13 +32,14 @@ function handleSubmit(e) {
 
 async function getWeatherData(location) {
    const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=6173c9d9049822ff962b74551cf91325&q=${location}`,
+      `http://api.weatherapi.com/v1/forecast.json?key=eeac03c91a932213f554cb4e6ce3d60a&q=${location}`,
       {
          mode: 'cors',
       }
    );
    if (response.status === 400) {
       console.log("error");
+      throwErrorMsg();
    } else {
       error.style.display = 'none';
       const weatherData = await response.json();
@@ -47,6 +48,19 @@ async function getWeatherData(location) {
       reset();
    }
 }
+
+function throwErrorMsg() {
+   error.style.display = 'block';
+   if (error.classList.contains('fade-in')) {
+     error.style.display = 'none';
+     error.classList.remove('fade-in2');
+     error.offsetWidth;
+     error.classList.add('fade-in');
+     error.style.display = 'block';
+   } else {
+     error.classList.add('fade-in');
+   }
+ }
 
 function grabData(weatherData) {
    const myData = {
