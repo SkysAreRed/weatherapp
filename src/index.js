@@ -75,6 +75,7 @@ function grabData(weatherData) {
       location: weatherData.location.name.toUpperCase(),
       region: weatherData.location.country === "New Zealand" ? weatherData.location.country.toUpperCase() : undefined
    };
+   console.log(myData.region, weatherData.location.country, weatherData.location.country === "New Zealand");
    return myData;
 }
 
