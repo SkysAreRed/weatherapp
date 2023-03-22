@@ -68,16 +68,13 @@ function grabData(weatherData) {
          c: Math.round(weatherData.current.feelslike_c),
       },
       currentTemp: {
-         c: Math.round(weatherData.current.feelslike_c),
+         c: Math.round(weatherData.current.temp_c),
       },
-      wind: Math.round(weatherData.current.wind_mph),
+      wind: Math.round(weatherData.current.wind_kph),
       humidity: weatherData.current.humidity,
       location: weatherData.location.name.toUpperCase(),
+      region: weatherData.location.country === "New Zealand" ? weatherData.location.country.toUpperCase() : undefined
    };
-
-   if (weatherData.location.country === "New Zealand") {
-      myData['region'] = weatherData.location.country.toUpperCase();
-   }
    return myData;
 }
 
@@ -93,7 +90,7 @@ function displayData(newData) {
       }
    });
    document.querySelector('.condition').textContent = newData.condition;
-   document.querySelector('.location').textContent = `${newData.location}`;
+   document.querySelector('.location').textContent = `${newData.location}, ${newData.region}`;
    document.querySelector('.degrees').textContent = newData.currentTemp.c;
    document.querySelector('.feels-like').textContent = `Feels like: ${newData.feelsLike.c}`;
    document.querySelector('.wind-kph').textContent = `Wind: ${newData.wind} KPH`;
