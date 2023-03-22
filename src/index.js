@@ -90,7 +90,7 @@ function displayData(newData) {
       }
    });
    document.querySelector('.condition').textContent = newData.condition;
-   document.querySelector('.location').textContent = `${newData.location}, ${newData.region}`;
+   document.querySelector('.location').textContent = `${newData.location} ${newData.region && ", "} ${newData.region}`;
    document.querySelector('.degrees').textContent = newData.currentTemp.c;
    document.querySelector('.feels-like').textContent = `Feels like: ${newData.feelsLike.c}`;
    document.querySelector('.wind-kph').textContent = `Wind: ${newData.wind} KPH`;
