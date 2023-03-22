@@ -62,7 +62,7 @@ function throwErrorMsg() {
  }
 
 function grabData(weatherData) {
-   const myData = {
+   const myData = { // this is object not array 
       condition: weatherData.current.condition.text,
       feelsLike: {
          c: Math.round(weatherData.current.feelslike_c),
@@ -73,7 +73,7 @@ function grabData(weatherData) {
       wind: Math.round(weatherData.current.wind_kph),
       humidity: weatherData.current.humidity,
       location: weatherData.location.name.toUpperCase(),
-      region: weatherData.location.country === "New Zealand" ? weatherData.location.country.toUpperCase() : undefined
+      region: weatherData.location.country.toUpperCase()
    };
    console.log(myData.region, weatherData.location.country, weatherData.location.country === "New Zealand");
    return myData;
@@ -91,7 +91,7 @@ function displayData(newData) {
       }
    });
    document.querySelector('.condition').textContent = newData.condition;
-   document.querySelector('.location').textContent = `${newData.location} ${newData.region && ", "} ${newData.region}`;
+   document.querySelector('.location').textContent = `${newData.location}, ${newData.region}`;
    document.querySelector('.degrees').textContent = newData.currentTemp.c;
    document.querySelector('.feels-like').textContent = `Feels like: ${newData.feelsLike.c}`;
    document.querySelector('.wind-kph').textContent = `Wind: ${newData.wind} KPH`;
