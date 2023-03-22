@@ -30,7 +30,7 @@ function handleSubmit(e) {
 
 async function getWeatherData(location) {
    const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=1849d12bc77e460a9d4131124232103&q=${location}`,
+      `https://api.weatherapi.com/v1/forecast.json?key=1849d12bc77e460a9d4131124232103&q=${location}`,
       {
          mode: 'cors',
       }
